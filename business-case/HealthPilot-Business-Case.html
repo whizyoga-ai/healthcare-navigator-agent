@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthPilot - Investor Presentation</title>
+  <style>
+    :root {
+      --primary: #0D7C66;
+      --secondary: #41B3A2;
+      --accent: #E8751A;
+      --dark: #1A1A2E;
+      --light: #F5F7FA;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    .tagline { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+    }
+    .stat-box {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem;
+      flex: 1;
+      min-width: 200px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .stat-box:hover { transform: translateY(-5px); }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .stat-label { font-size: 1rem; color: var(--dark); }
+    .section {
+      margin: 4rem 0;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    .problem-solution { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .problem, .solution { flex: 1; min-width: 300px; padding: 1.5rem; border-radius: 10px; }
+    .problem { background: #FFE8E8; border-left: 5px solid #E74C3C; }
+    .solution { background: #E8F4FF; border-left: 5px solid var(--primary); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+    .feature-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--dark); }
+    .market-opportunity {
+      background: linear-gradient(135deg, var(--primary), #095a4d);
+      color: white;
+      padding: 3rem;
+      border-radius: 15px;
+      margin: 3rem 0;
+    }
+    .market-title { font-size: 2rem; margin-bottom: 1.5rem; text-align: center; }
+    .market-stats { display: flex; justify-content: space-around; flex-wrap: wrap; }
+    .market-stat { text-align: center; margin: 1rem; }
+    .market-number { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+    .cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--dark);
+      color: white;
+      border-radius: 15px;
+      margin-top: 3rem;
+    }
+    .cta-title { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .cta-button:hover {
+      background: #ff9529;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    footer { text-align: center; padding: 2rem; color: var(--dark); font-size: 0.9rem; }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .tagline { font-size: 1.2rem; }
+      .stat-box { min-width: 150px; }
+      .section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HealthPilot</h1>
+    <p class="tagline">Eliminating <span class="highlight">$264 Billion</span> in Healthcare Access Barriers Through AI Navigation</p>
+  </header>
+
+  <div class="container">
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number">100M+</div>
+        <div class="stat-label">Americans with Access Barriers</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">$264B</div>
+        <div class="stat-label">Avoidable ER Visits Yearly</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">$8B</div>
+        <div class="stat-label">Navigation Market Size</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">35%</div>
+        <div class="stat-label">ER Utilization Reduction</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">The Problem & Our Solution</h2>
+      <div class="problem-solution">
+        <div class="problem">
+          <h3>The Problem</h3>
+          <p>Millions face overwhelming healthcare complexity, leading to:</p>
+          <ul>
+            <li>$264B+ in avoidable emergency visits</li>
+            <li>Language and cultural barriers for 20M+ patients</li>
+            <li>Confusion navigating insurance networks</li>
+            <li>Inability to interpret medical bills</li>
+            <li>Delayed care and preventable complications</li>
+          </ul>
+        </div>
+        <div class="solution">
+          <h3>Our Solution</h3>
+          <p>An AI-powered healthcare navigator that:</p>
+          <ul>
+            <li>Provides multilingual guidance in 30+ languages</li>
+            <li>Matches patients with in-network providers</li>
+            <li>Interprets insurance and medical bills</li>
+            <li>Schedules appointments and coordinates care</li>
+            <li>Ensures HIPAA-compliant data protection</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🗣️</div>
+          <div class="feature-title">Multilingual Navigation</div>
+          <p>Conversational AI in 30+ languages with cultural competency for underserved populations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏥</div>
+          <div class="feature-title">Smart Provider Matching</div>
+          <p>Insurance network verification, location-based search, and cultural competency matching.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <div class="feature-title">Bill Interpretation</div>
+          <p>Itemized explanations, error detection, and payment plan assistance for medical bills.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <div class="feature-title">Appointment Coordination</div>
+          <p>Automated scheduling, reminders, and transportation coordination for patient convenience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💊</div>
+          <div class="feature-title">Medication Management</div>
+          <p>Refill reminders, pharmacy navigation, and financial assistance program matching.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-title">HIPAA Compliance</div>
+          <p>End-to-end encryption, consent management, and comprehensive audit trails.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="market-opportunity">
+      <h2 class="market-title">Massive Market Opportunity</h2>
+      <div class="market-stats">
+        <div class="market-stat">
+          <div class="market-number">100M+</div>
+          <div>Patients with Barriers</div>
+        </div>
+        <div class="market-stat">
+          <div class="market-number">$15B</div>
+          <div>Addressable Market</div>
+        </div>
+        <div class="market-stat">
+          <div class="market-number">20M</div>
+          <div>Limited English Speakers</div>
+        </div>
+        <div class="market-stat">
+          <div class="market-number">$30M</div>
+          <div>ARR Target (36 months)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Business Model</h2>
+      <div class="problem-solution">
+        <div class="solution">
+          <h3>Health Plan Licensing</h3>
+          <p>$15-25 PMPM for Medicare Advantage, Medicaid MCOs, and commercial insurers seeking member engagement and HEDIS improvement.</p>
+        </div>
+        <div class="solution">
+          <h3>Health System Partnerships</h3>
+          <p>$100K-500K annually for white-label navigation supporting patient access centers and community outreach programs.</p>
+        </div>
+        <div class="solution">
+          <h3>Value-Based Care</h3>
+          <p>Shared savings agreements tied to utilization reduction, quality metrics, and readmission prevention.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2 class="cta-title">Join Us in Transforming Healthcare Access</h2>
+      <p>We're seeking visionary investors to help us scale our AI solution and improve healthcare equity for millions of Americans.</p>
+      <a href="#" class="cta-button">Schedule a Demo</a>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>HealthPilot</strong> – Democratizing Healthcare Navigation Through AI</p>
+    <p>Data Sources: CMS, Kaiser Family Foundation, Healthcare Cost Institute, National Health Interview Survey</p>
+  </footer>
+</body>
+</html>
